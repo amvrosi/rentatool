@@ -25,7 +25,7 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
                         />
                     ) : (
                         <div className="flex size-full items-center justify-center bg-gray-50">
-                            <HardHat className="size-16 text-gray-300" />
+                            <HardHat className="size-16 text-gray-600" />
                         </div>
                     )}
                     {equipment.is_featured && (
@@ -47,14 +47,14 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
 
                 {/* Name */}
                 <Link href={`/equipment/${equipment.slug}`}>
-                    <h3 className="line-clamp-1 font-semibold text-gray-900 transition-colors group-hover:text-primary">
+                    <h3 className="line-clamp-1 font-semibold text-primary transition-colors group-hover:font-bold">
                         {equipment.name}
                     </h3>
                 </Link>
 
                 {/* Short Description */}
                 {equipment.short_description && (
-                    <p className="line-clamp-2 text-sm text-gray-500">
+                    <p className="line-clamp-2 text-sm text-gray-600">
                         {equipment.short_description}
                     </p>
                 )}
@@ -64,7 +64,7 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
                     <span className="text-lg font-bold text-gray-900">
                         ${Number(equipment.daily_rate).toFixed(2)}
                     </span>
-                    <span className="text-sm text-gray-500"> / day</span>
+                    <span className="text-sm text-gray-700"> / day</span>
                 </div>
             </CardContent>
 

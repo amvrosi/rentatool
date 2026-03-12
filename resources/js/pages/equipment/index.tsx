@@ -125,7 +125,7 @@ export default function EquipmentIndex({
                                 onValueChange={handleSortChange}
                             >
                                 <SelectTrigger className="w-48">
-                                    <SelectValue placeholder="Sort by" />
+                                    <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectItem value="default">
@@ -254,7 +254,7 @@ export default function EquipmentIndex({
                             onValueChange={handleSortChange}
                         >
                             <SelectTrigger className="w-44">
-                                <SelectValue placeholder="Sort by" />
+                                <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectItem value="default">Default</SelectItem>
@@ -297,7 +297,7 @@ export default function EquipmentIndex({
                                         <HardHat className="size-4" />
                                         All Equipment
                                     </span>
-                                    <span className="text-xs text-gray-400">
+                                    <span className="text-xs text-gray-600">
                                         {equipment.meta?.total ?? 0}
                                     </span>
                                 </button>
@@ -317,7 +317,7 @@ export default function EquipmentIndex({
                                         <span>{category.name}</span>
                                         {typeof category.equipment_count ===
                                             'number' && (
-                                            <span className="text-xs text-gray-400">
+                                            <span className="text-xs text-gray-600">
                                                 {category.equipment_count}
                                             </span>
                                         )}

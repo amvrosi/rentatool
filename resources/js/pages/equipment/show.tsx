@@ -185,7 +185,7 @@ export default function EquipmentShow({
                         </h1>
 
                         {/* SKU & Rating */}
-                        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500">
+                        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-700">
                             <span>SKU: {equipment.sku}</span>
                             {equipment.average_rating !== undefined &&
                                 equipment.average_rating > 0 && (
@@ -221,7 +221,7 @@ export default function EquipmentShow({
                                         <tr>
                                             <td className="px-4 py-3 text-sm font-medium text-gray-700">
                                                 <span className="flex items-center gap-2">
-                                                    <Calendar className="size-4 text-gray-400" />
+                                                    <Calendar className="size-4 text-gray-600" />
                                                     Daily Rate
                                                 </span>
                                             </td>

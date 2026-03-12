@@ -209,7 +209,7 @@ export default function Welcome({
                     <h2 className="mb-4 text-3xl font-bold text-primary-foreground">
                         Ready to Get Started?
                     </h2>
-                    <p className="mb-8 text-lg text-primary-foreground/80">
+                    <p className="mb-8 text-lg text-primary-foreground">
                         Browse our full catalog and find the equipment you need
                         for your next project.
                     </p>
