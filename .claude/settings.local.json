@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan:*)",
+      "Bash(where php:*)",
+      "Read(//c/xampp/php/**)",
+      "Read(//c/laragon/bin/php/**)",
+      "Bash(/c/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe artisan:*)",
+      "Bash(\"/c/Users/mrvan/.config/herd/bin/php.bat\" --version)",
+      "Bash(\"/c/Users/mrvan/.config/herd/bin/php.bat\" artisan:*)",
+      "Bash(ls -la \"C:\\\\Users\\\\mrvan\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--code-PHP-rentatool\\\\tasks\"\" 2>/dev/null || echo \"checking files...\" && dir /b \"C:UsersmrvanAppDataLocalTempclaudeD--code-PHP-rentatooltasks\"\")",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
