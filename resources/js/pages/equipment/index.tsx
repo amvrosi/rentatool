@@ -112,8 +112,8 @@ export default function EquipmentIndex({
                                 Browse Equipment
                             </h1>
                             <p className="mt-2 text-gray-600">
-                                {equipment.meta.total}{' '}
-                                {equipment.meta.total === 1 ? 'item' : 'items'}{' '}
+                                {equipment.meta?.total ?? 0}{' '}
+                                {(equipment.meta?.total ?? 0) === 1 ? 'item' : 'items'}{' '}
                                 available for rent
                             </p>
                         </div>
@@ -298,7 +298,7 @@ export default function EquipmentIndex({
                                         All Equipment
                                     </span>
                                     <span className="text-xs text-gray-400">
-                                        {equipment.meta.total}
+                                        {equipment.meta?.total ?? 0}
                                     </span>
                                 </button>
                                 {categories.map((category) => (
@@ -341,7 +341,7 @@ export default function EquipmentIndex({
                                 </div>
 
                                 {/* Pagination */}
-                                {equipment.meta.last_page > 1 && (
+                                {(equipment.meta?.last_page ?? 1) > 1 && (
                                     <div className="mt-8 flex items-center justify-center gap-2">
                                         {equipment.links.prev ? (
                                             <Button
