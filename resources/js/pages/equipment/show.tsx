@@ -25,8 +25,8 @@ interface EquipmentShowProps {
     relatedEquipment: Equipment[];
 }
 
-function formatCurrency(amount: number): string {
-    return `$${amount.toFixed(2)}`;
+function formatCurrency(amount: number | string): string {
+    return `$${Number(amount).toFixed(2)}`;
 }
 
 export default function EquipmentShow({

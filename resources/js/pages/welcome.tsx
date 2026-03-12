@@ -62,7 +62,6 @@ export default function Welcome({
             {/* Hero Section */}
             <section className="relative overflow-hidden bg-gray-900">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.7),rgba(0,0,0,0.4))]" />
-                <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-40" />
                 <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
                     <div className="max-w-2xl">
                         <Badge variant="secondary" className="mb-4 text-sm">

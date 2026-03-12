@@ -62,7 +62,7 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
                 {/* Price */}
                 <div className="mt-auto pt-2">
                     <span className="text-lg font-bold text-gray-900">
-                        ${equipment.daily_rate.toFixed(2)}
+                        ${Number(equipment.daily_rate).toFixed(2)}
                     </span>
                     <span className="text-sm text-gray-500"> / day</span>
                 </div>
