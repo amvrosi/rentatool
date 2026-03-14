@@ -16,7 +16,7 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
         <Card className="group gap-0 overflow-hidden py-0 transition-shadow hover:shadow-lg">
             {/* Image */}
             <Link href={`/equipment/${equipment.slug}`} className="block">
-                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     {imageUrl ? (
                         <img
                             src={imageUrl}
@@ -24,8 +24,8 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
                             className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                     ) : (
-                        <div className="flex size-full items-center justify-center bg-gray-50">
-                            <HardHat className="size-16 text-gray-600" />
+                        <div className="flex size-full items-center justify-center bg-muted">
+                            <HardHat className="size-16 text-muted-foreground" />
                         </div>
                     )}
                     {equipment.is_featured && (
@@ -54,17 +54,17 @@ export function EquipmentCard({ equipment }: EquipmentCardProps) {
 
                 {/* Short Description */}
                 {equipment.short_description && (
-                    <p className="line-clamp-2 text-sm text-gray-600">
+                    <p className="line-clamp-2 text-sm text-muted-foreground">
                         {equipment.short_description}
                     </p>
                 )}
 
                 {/* Price */}
                 <div className="mt-auto pt-2">
-                    <span className="text-lg font-bold text-gray-900">
+                    <span className="text-lg font-bold text-foreground">
                         ${Number(equipment.daily_rate).toFixed(2)}
                     </span>
-                    <span className="text-sm text-gray-700"> / day</span>
+                    <span className="text-sm text-muted-foreground"> / day</span>
                 </div>
             </CardContent>
 

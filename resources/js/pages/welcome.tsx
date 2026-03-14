@@ -90,13 +90,13 @@ export default function Welcome({
 
             {/* Category Cards */}
             {categories.length > 0 && (
-                <section className="bg-gray-50 py-16 sm:py-20">
+                <section className="bg-muted py-16 sm:py-20">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="mb-10 text-center">
-                            <h2 className="mb-3 text-3xl font-bold text-gray-900">
+                            <h2 className="mb-3 text-3xl font-bold text-foreground">
                                 Equipment Categories
                             </h2>
-                            <p className="text-lg text-gray-600">
+                            <p className="text-lg text-muted-foreground">
                                 Find the right equipment for your project
                             </p>
                         </div>
@@ -117,11 +117,11 @@ export default function Welcome({
                                                     <IconComponent className="size-6 text-primary" />
                                                 </div>
                                                 <div className="min-w-0">
-                                                    <h3 className="truncate font-semibold text-gray-900">
+                                                    <h3 className="truncate font-semibold text-foreground">
                                                         {category.name}
                                                     </h3>
                                                     {typeof category.equipment_count === 'number' && (
-                                                        <p className="text-sm text-gray-500">
+                                                        <p className="text-sm text-muted-foreground">
                                                             {category.equipment_count}{' '}
                                                             {category.equipment_count === 1
                                                                 ? 'item'
@@ -145,10 +145,10 @@ export default function Welcome({
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="mb-10 flex items-end justify-between">
                             <div>
-                                <h2 className="mb-3 text-3xl font-bold text-gray-900">
+                                <h2 className="mb-3 text-3xl font-bold text-foreground">
                                     Featured Equipment
                                 </h2>
-                                <p className="text-lg text-gray-600">
+                                <p className="text-lg text-muted-foreground">
                                     Popular rentals chosen by professionals
                                 </p>
                             </div>
@@ -171,13 +171,13 @@ export default function Welcome({
             )}
 
             {/* Why Choose Us */}
-            <section className="bg-gray-50 py-16 sm:py-20">
+            <section className="bg-muted py-16 sm:py-20">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-12 text-center">
-                        <h2 className="mb-3 text-3xl font-bold text-gray-900">
+                        <h2 className="mb-3 text-3xl font-bold text-foreground">
                             Why Choose RentATool
                         </h2>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-lg text-muted-foreground">
                             We make renting construction equipment simple and
                             reliable
                         </p>
@@ -191,10 +191,10 @@ export default function Welcome({
                                 <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-primary/10">
                                     <prop.icon className="size-7 text-primary" />
                                 </div>
-                                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                                <h3 className="mb-2 text-lg font-semibold text-foreground">
                                     {prop.title}
                                 </h3>
-                                <p className="text-sm leading-relaxed text-gray-600">
+                                <p className="text-sm leading-relaxed text-muted-foreground">
                                     {prop.description}
                                 </p>
                             </div>

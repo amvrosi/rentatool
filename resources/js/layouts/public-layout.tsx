@@ -19,14 +19,14 @@ export default function PublicLayout({ children }: PropsWithChildren) {
     };
 
     return (
-        <div className="flex min-h-screen flex-col bg-white">
+        <div className="flex min-h-screen flex-col bg-background">
             {/* Top Navigation */}
-            <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
+            <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
                 <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                     {/* Logo */}
                     <Link href={home.url()} className="flex items-center gap-2">
                         <HardHat className="size-8 text-primary" />
-                        <span className="text-xl font-bold tracking-tight text-gray-900">
+                        <span className="text-xl font-bold tracking-tight text-foreground">
                             RentATool
                         </span>
                     </Link>
@@ -37,7 +37,7 @@ export default function PublicLayout({ children }: PropsWithChildren) {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-primary"
+                                className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
                             >
                                 {link.label}
                             </Link>
@@ -50,11 +50,11 @@ export default function PublicLayout({ children }: PropsWithChildren) {
                             <div className="flex items-center gap-3">
                                 <Link
                                     href={dashboard.url()}
-                                    className="text-sm font-medium text-gray-700 hover:text-gray-900"
+                                    className="text-sm font-medium text-foreground/80 hover:text-foreground"
                                 >
                                     Dashboard
                                 </Link>
-                                <span className="text-sm text-gray-500">
+                                <span className="text-sm text-muted-foreground">
                                     {auth.user.name}
                                 </span>
                                 <Button
@@ -80,7 +80,7 @@ export default function PublicLayout({ children }: PropsWithChildren) {
                     {/* Mobile Hamburger */}
                     <button
                         type="button"
-                        className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 md:hidden"
+                        className="inline-flex items-center justify-center rounded-md p-2 text-foreground/80 hover:bg-accent md:hidden"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
                         <span className="sr-only">Open main menu</span>
@@ -94,35 +94,35 @@ export default function PublicLayout({ children }: PropsWithChildren) {
 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="border-t border-gray-200 bg-white md:hidden">
+                    <div className="border-t border-border bg-background md:hidden">
                         <div className="space-y-1 px-4 py-3">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
+                                    className="block rounded-md px-3 py-2 text-base font-medium text-foreground/80 hover:bg-accent"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {link.label}
                                 </Link>
                             ))}
                         </div>
-                        <div className="border-t border-gray-200 px-4 py-3">
+                        <div className="border-t border-border px-4 py-3">
                             {auth.user ? (
                                 <div className="space-y-2">
-                                    <p className="text-sm font-medium text-gray-700">
+                                    <p className="text-sm font-medium text-foreground/80">
                                         {auth.user.name}
                                     </p>
                                     <Link
                                         href={dashboard.url()}
-                                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
+                                        className="block rounded-md px-3 py-2 text-base font-medium text-foreground/80 hover:bg-accent"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Dashboard
                                     </Link>
                                     <button
                                         type="button"
-                                        className="block w-full rounded-md px-3 py-2 text-left text-base font-medium text-gray-700 hover:bg-gray-100"
+                                        className="block w-full rounded-md px-3 py-2 text-left text-base font-medium text-foreground/80 hover:bg-accent"
                                         onClick={handleLogout}
                                     >
                                         Log out
@@ -147,7 +147,7 @@ export default function PublicLayout({ children }: PropsWithChildren) {
             <main className="flex-1">{children}</main>
 
             {/* Footer */}
-            <footer className="border-t border-gray-200 bg-gray-900 text-gray-300">
+            <footer className="border-t border-border bg-gray-900 text-gray-300">
                 <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                     <div className="grid gap-8 md:grid-cols-4">
                         {/* Company Info */}
