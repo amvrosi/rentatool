@@ -16,9 +16,9 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 const equipmentStatusColors: Record<EquipmentStatus, string> = {
-    active: 'bg-green-100 text-green-800',
-    maintenance: 'bg-yellow-100 text-yellow-800',
-    retired: 'bg-gray-100 text-gray-800',
+    active: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400',
+    maintenance: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400',
+    retired: 'bg-gray-100 text-gray-800 dark:bg-gray-800/30 dark:text-gray-400',
 };
 
 interface Props {
@@ -164,7 +164,7 @@ export default function EquipmentIndex({ equipment, categories, filters }: Props
                                                         <Button
                                                             size="sm"
                                                             variant="outline"
-                                                            className="text-red-600 hover:text-red-700"
+                                                            className="text-destructive hover:text-destructive/80"
                                                             onClick={() => handleDelete(item.id)}
                                                         >
                                                             <Trash2 className="mr-1 h-3 w-3" />
@@ -208,7 +208,7 @@ export default function EquipmentIndex({ equipment, categories, filters }: Props
                                                 <Button
                                                     size="sm"
                                                     variant="outline"
-                                                    className="text-red-600 hover:text-red-700"
+                                                    className="text-destructive hover:text-destructive/80"
                                                     onClick={() => handleDelete(item.id)}
                                                 >
                                                     <Trash2 className="h-3 w-3" />

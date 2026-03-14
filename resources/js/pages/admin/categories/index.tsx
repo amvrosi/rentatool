@@ -113,7 +113,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                             value={data.name}
                                             onChange={(e) => setData('name', e.target.value)}
                                         />
-                                        {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
+                                        {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="slug">Slug *</Label>
@@ -122,7 +122,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                             value={data.slug}
                                             onChange={(e) => setData('slug', e.target.value)}
                                         />
-                                        {errors.slug && <p className="text-sm text-red-600">{errors.slug}</p>}
+                                        {errors.slug && <p className="text-sm text-destructive">{errors.slug}</p>}
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="description">Description</Label>
@@ -133,7 +133,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                             value={data.description}
                                             onChange={(e) => setData('description', e.target.value)}
                                         />
-                                        {errors.description && <p className="text-sm text-red-600">{errors.description}</p>}
+                                        {errors.description && <p className="text-sm text-destructive">{errors.description}</p>}
                                     </div>
                                     <div className="flex items-center space-x-2">
                                         <Checkbox
@@ -190,7 +190,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                                 <td className="px-4 py-3 text-right">{category.equipment_count ?? 0}</td>
                                                 <td className="px-4 py-3">
                                                     <Badge
-                                                        className={category.is_active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}
+                                                        className={category.is_active ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' : 'bg-gray-100 text-gray-800 dark:bg-gray-800/30 dark:text-gray-400'}
                                                         variant="secondary"
                                                     >
                                                         {category.is_active ? 'Active' : 'Inactive'}
@@ -209,7 +209,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                                         <Button
                                                             size="sm"
                                                             variant="outline"
-                                                            className="text-red-600 hover:text-red-700"
+                                                            className="text-destructive hover:text-destructive/80"
                                                             onClick={() => handleDelete(category.id)}
                                                         >
                                                             <Trash2 className="mr-1 h-3 w-3" />
@@ -234,7 +234,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                         <div className="flex items-center justify-between">
                                             <span className="font-semibold">{category.name}</span>
                                             <Badge
-                                                className={category.is_active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}
+                                                className={category.is_active ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' : 'bg-gray-100 text-gray-800 dark:bg-gray-800/30 dark:text-gray-400'}
                                                 variant="secondary"
                                             >
                                                 {category.is_active ? 'Active' : 'Inactive'}
@@ -256,7 +256,7 @@ export default function CategoriesIndex({ categories }: Props) {
                                                 <Button
                                                     size="sm"
                                                     variant="outline"
-                                                    className="text-red-600 hover:text-red-700"
+                                                    className="text-destructive hover:text-destructive/80"
                                                     onClick={() => handleDelete(category.id)}
                                                 >
                                                     <Trash2 className="h-3 w-3" />

@@ -104,14 +104,14 @@ export default function EquipmentIndex({
             <Head title="Browse Equipment" />
 
             {/* Page Header */}
-            <section className="border-b border-gray-200 bg-gray-50">
+            <section className="border-b border-border bg-muted">
                 <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                         <div>
-                            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                                 Browse Equipment
                             </h1>
-                            <p className="mt-2 text-gray-600">
+                            <p className="mt-2 text-muted-foreground">
                                 {equipment.meta?.total ?? 0}{' '}
                                 {(equipment.meta?.total ?? 0) === 1 ? 'item' : 'items'}{' '}
                                 available for rent
@@ -150,7 +150,7 @@ export default function EquipmentIndex({
                         className="mt-6 flex gap-2"
                     >
                         <div className="relative flex-1">
-                            <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-gray-400" />
+                            <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
                             <Input
                                 type="text"
                                 placeholder="Search equipment by name, description, or SKU..."
@@ -164,7 +164,7 @@ export default function EquipmentIndex({
                                 <button
                                     type="button"
                                     onClick={() => handleSearchChange('')}
-                                    className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                    className="absolute top-1/2 right-3 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                                 >
                                     <X className="size-4" />
                                 </button>
@@ -179,7 +179,7 @@ export default function EquipmentIndex({
                     {/* Active Filters */}
                     {hasActiveFilters && (
                         <div className="mt-4 flex flex-wrap items-center gap-2">
-                            <span className="text-sm text-gray-500">
+                            <span className="text-sm text-muted-foreground">
                                 Active filters:
                             </span>
                             {filters.search && (
@@ -274,10 +274,10 @@ export default function EquipmentIndex({
                     <aside
                         className={`mb-6 lg:mb-0 lg:block ${filtersOpen ? 'block' : 'hidden'}`}
                     >
-                        <div className="rounded-lg border border-gray-200 bg-white p-4">
+                        <div className="rounded-lg border border-border bg-card p-4">
                             <div className="mb-3 flex items-center gap-2">
                                 <Filter className="size-4 text-primary" />
-                                <h2 className="font-semibold text-gray-900">
+                                <h2 className="font-semibold text-foreground">
                                     Categories
                                 </h2>
                             </div>
@@ -290,14 +290,14 @@ export default function EquipmentIndex({
                                     className={`flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors ${
                                         !filters.category
                                             ? 'bg-primary/10 font-medium text-primary'
-                                            : 'text-gray-700 hover:bg-gray-50'
+                                            : 'text-muted-foreground hover:bg-muted'
                                     }`}
                                 >
                                     <span className="flex items-center gap-2">
                                         <HardHat className="size-4" />
                                         All Equipment
                                     </span>
-                                    <span className="text-xs text-gray-600">
+                                    <span className="text-xs text-muted-foreground">
                                         {equipment.meta?.total ?? 0}
                                     </span>
                                 </button>
@@ -311,13 +311,13 @@ export default function EquipmentIndex({
                                         className={`flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors ${
                                             filters.category === category.slug
                                                 ? 'bg-primary/10 font-medium text-primary'
-                                                : 'text-gray-700 hover:bg-gray-50'
+                                                : 'text-muted-foreground hover:bg-muted'
                                         }`}
                                     >
                                         <span>{category.name}</span>
                                         {typeof category.equipment_count ===
                                             'number' && (
-                                            <span className="text-xs text-gray-600">
+                                            <span className="text-xs text-muted-foreground">
                                                 {category.equipment_count}
                                             </span>
                                         )}
@@ -368,7 +368,7 @@ export default function EquipmentIndex({
                                             </Button>
                                         )}
 
-                                        <span className="px-4 text-sm text-gray-600">
+                                        <span className="px-4 text-sm text-muted-foreground">
                                             Page {equipment.meta.current_page}{' '}
                                             of {equipment.meta.last_page}
                                         </span>
@@ -401,12 +401,12 @@ export default function EquipmentIndex({
                                 )}
                             </>
                         ) : (
-                            <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-200 py-16 text-center">
-                                <HardHat className="mb-4 size-12 text-gray-300" />
-                                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                            <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-border py-16 text-center">
+                                <HardHat className="mb-4 size-12 text-muted-foreground/50" />
+                                <h3 className="mb-2 text-lg font-semibold text-foreground">
                                     No equipment found
                                 </h3>
-                                <p className="mb-6 max-w-sm text-sm text-gray-500">
+                                <p className="mb-6 max-w-sm text-sm text-muted-foreground">
                                     We couldn't find any equipment matching your
                                     filters. Try adjusting your search or
                                     clearing filters.

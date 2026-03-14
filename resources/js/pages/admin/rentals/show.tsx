@@ -12,12 +12,12 @@ import type { User } from '@/types/auth';
 import { type FormEvent } from 'react';
 
 const statusColors: Record<RentalStatus, string> = {
-    pending: 'bg-yellow-100 text-yellow-800',
-    confirmed: 'bg-blue-100 text-blue-800',
-    active: 'bg-green-100 text-green-800',
-    completed: 'bg-gray-100 text-gray-800',
-    cancelled: 'bg-red-100 text-red-800',
-    overdue: 'bg-orange-100 text-orange-800',
+    pending: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400',
+    confirmed: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400',
+    active: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400',
+    completed: 'bg-gray-100 text-gray-800 dark:bg-gray-800/30 dark:text-gray-400',
+    cancelled: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400',
+    overdue: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400',
 };
 
 const allStatuses: RentalStatus[] = ['pending', 'confirmed', 'active', 'completed', 'cancelled', 'overdue'];
@@ -144,9 +144,9 @@ export default function RentalShow({ rental, operators }: Props) {
                                     </div>
                                 )}
                                 {rental.cancellation_reason && (
-                                    <div className="mt-4 rounded-lg bg-red-50 p-3">
-                                        <p className="text-sm font-medium text-red-800">Cancellation Reason</p>
-                                        <p className="mt-1 text-sm text-red-700">{rental.cancellation_reason}</p>
+                                    <div className="mt-4 rounded-lg bg-destructive/10 p-3">
+                                        <p className="text-sm font-medium text-red-800 dark:text-red-400">Cancellation Reason</p>
+                                        <p className="mt-1 text-sm text-destructive">{rental.cancellation_reason}</p>
                                     </div>
                                 )}
                             </CardContent>
@@ -259,7 +259,7 @@ export default function RentalShow({ rental, operators }: Props) {
                                             </SelectContent>
                                         </Select>
                                         {statusForm.errors.status && (
-                                            <p className="text-sm text-red-600">{statusForm.errors.status}</p>
+                                            <p className="text-sm text-destructive">{statusForm.errors.status}</p>
                                         )}
                                     </div>
                                     <Button
@@ -299,7 +299,7 @@ export default function RentalShow({ rental, operators }: Props) {
                                             </SelectContent>
                                         </Select>
                                         {operatorForm.errors.operator_id && (
-                                            <p className="text-sm text-red-600">{operatorForm.errors.operator_id}</p>
+                                            <p className="text-sm text-destructive">{operatorForm.errors.operator_id}</p>
                                         )}
                                     </div>
                                     {rental.operator && (
@@ -332,7 +332,7 @@ export default function RentalShow({ rental, operators }: Props) {
                                             placeholder="Add internal notes about this rental..."
                                         />
                                         {notesForm.errors.admin_notes && (
-                                            <p className="text-sm text-red-600">{notesForm.errors.admin_notes}</p>
+                                            <p className="text-sm text-destructive">{notesForm.errors.admin_notes}</p>
                                         )}
                                     </div>
                                     <Button type="submit" variant="outline" className="w-full" disabled={notesForm.processing}>

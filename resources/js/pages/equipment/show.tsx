@@ -54,9 +54,9 @@ export default function EquipmentShow({
             <Head title={equipment.name} />
 
             {/* Breadcrumb */}
-            <div className="border-b border-gray-200 bg-gray-50">
+            <div className="border-b border-border bg-muted">
                 <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-                    <nav className="flex items-center gap-1 text-sm text-gray-500">
+                    <nav className="flex items-center gap-1 text-sm text-muted-foreground">
                         <Link
                             href="/equipment"
                             className="transition-colors hover:text-primary"
@@ -75,7 +75,7 @@ export default function EquipmentShow({
                                 <ChevronRight className="size-3.5" />
                             </>
                         )}
-                        <span className="truncate font-medium text-gray-900">
+                        <span className="truncate font-medium text-foreground">
                             {equipment.name}
                         </span>
                     </nav>
@@ -87,7 +87,7 @@ export default function EquipmentShow({
                 {/* Back Link */}
                 <Link
                     href="/equipment"
-                    className="mb-6 inline-flex items-center gap-1 text-sm font-medium text-gray-600 transition-colors hover:text-primary"
+                    className="mb-6 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                 >
                     <ArrowLeft className="size-4" />
                     Back to Equipment
@@ -97,7 +97,7 @@ export default function EquipmentShow({
                     {/* Image Gallery */}
                     <div>
                         {/* Primary Image */}
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-muted">
                             {selectedImage ? (
                                 <img
                                     src={selectedImage.url}
@@ -109,7 +109,7 @@ export default function EquipmentShow({
                                 />
                             ) : (
                                 <div className="flex size-full items-center justify-center">
-                                    <HardHat className="size-24 text-gray-300" />
+                                    <HardHat className="size-24 text-muted-foreground/50" />
                                 </div>
                             )}
 
@@ -146,7 +146,7 @@ export default function EquipmentShow({
                                         className={`relative aspect-square overflow-hidden rounded-md border-2 transition-all ${
                                             selectedImage?.id === image.id
                                                 ? 'border-primary ring-2 ring-primary/20'
-                                                : 'border-transparent hover:border-gray-300'
+                                                : 'border-transparent hover:border-border'
                                         }`}
                                     >
                                         <img
@@ -180,12 +180,12 @@ export default function EquipmentShow({
                         )}
 
                         {/* Name */}
-                        <h1 className="mb-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+                        <h1 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">
                             {equipment.name}
                         </h1>
 
                         {/* SKU & Rating */}
-                        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-700">
+                        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                             <span>SKU: {equipment.sku}</span>
                             {equipment.average_rating !== undefined &&
                                 equipment.average_rating > 0 && (
@@ -203,13 +203,13 @@ export default function EquipmentShow({
                         </div>
 
                         {/* Description */}
-                        <p className="mb-6 leading-relaxed text-gray-600">
+                        <p className="mb-6 leading-relaxed text-muted-foreground">
                             {equipment.description}
                         </p>
 
                         {/* Pricing Table */}
                         <Card className="mb-6 gap-0 py-0 overflow-hidden">
-                            <CardHeader className="bg-gray-50 px-4 py-3">
+                            <CardHeader className="bg-muted px-4 py-3">
                                 <CardTitle className="flex items-center gap-2 text-base">
                                     <Tag className="size-4 text-primary" />
                                     Rental Rates
@@ -217,19 +217,19 @@ export default function EquipmentShow({
                             </CardHeader>
                             <CardContent className="p-0">
                                 <table className="w-full">
-                                    <tbody className="divide-y divide-gray-100">
+                                    <tbody className="divide-y divide-border">
                                         <tr>
-                                            <td className="px-4 py-3 text-sm font-medium text-gray-700">
+                                            <td className="px-4 py-3 text-sm font-medium text-muted-foreground">
                                                 <span className="flex items-center gap-2">
-                                                    <Calendar className="size-4 text-gray-600" />
+                                                    <Calendar className="size-4 text-muted-foreground" />
                                                     Daily Rate
                                                 </span>
                                             </td>
-                                            <td className="px-4 py-3 text-right text-lg font-bold text-gray-900">
+                                            <td className="px-4 py-3 text-right text-lg font-bold text-foreground">
                                                 {formatCurrency(
                                                     equipment.daily_rate,
                                                 )}
-                                                <span className="text-sm font-normal text-gray-500">
+                                                <span className="text-sm font-normal text-muted-foreground">
                                                     {' '}
                                                     / day
                                                 </span>
@@ -237,17 +237,17 @@ export default function EquipmentShow({
                                         </tr>
                                         {equipment.weekly_rate && (
                                             <tr>
-                                                <td className="px-4 py-3 text-sm font-medium text-gray-700">
+                                                <td className="px-4 py-3 text-sm font-medium text-muted-foreground">
                                                     <span className="flex items-center gap-2">
-                                                        <Calendar className="size-4 text-gray-400" />
+                                                        <Calendar className="size-4 text-muted-foreground/70" />
                                                         Weekly Rate
                                                     </span>
                                                 </td>
-                                                <td className="px-4 py-3 text-right text-lg font-bold text-gray-900">
+                                                <td className="px-4 py-3 text-right text-lg font-bold text-foreground">
                                                     {formatCurrency(
                                                         equipment.weekly_rate,
                                                     )}
-                                                    <span className="text-sm font-normal text-gray-500">
+                                                    <span className="text-sm font-normal text-muted-foreground">
                                                         {' '}
                                                         / week
                                                     </span>
@@ -256,17 +256,17 @@ export default function EquipmentShow({
                                         )}
                                         {equipment.monthly_rate && (
                                             <tr>
-                                                <td className="px-4 py-3 text-sm font-medium text-gray-700">
+                                                <td className="px-4 py-3 text-sm font-medium text-muted-foreground">
                                                     <span className="flex items-center gap-2">
-                                                        <Calendar className="size-4 text-gray-400" />
+                                                        <Calendar className="size-4 text-muted-foreground/70" />
                                                         Monthly Rate
                                                     </span>
                                                 </td>
-                                                <td className="px-4 py-3 text-right text-lg font-bold text-gray-900">
+                                                <td className="px-4 py-3 text-right text-lg font-bold text-foreground">
                                                     {formatCurrency(
                                                         equipment.monthly_rate,
                                                     )}
-                                                    <span className="text-sm font-normal text-gray-500">
+                                                    <span className="text-sm font-normal text-muted-foreground">
                                                         {' '}
                                                         / month
                                                     </span>
@@ -280,21 +280,21 @@ export default function EquipmentShow({
 
                         {/* Deposit & Availability Info */}
                         <div className="mb-6 grid grid-cols-2 gap-3">
-                            <div className="rounded-lg border border-gray-200 p-3 text-center">
+                            <div className="rounded-lg border border-border p-3 text-center">
                                 <Shield className="mx-auto mb-1 size-5 text-primary" />
-                                <p className="text-xs text-gray-500">
+                                <p className="text-xs text-muted-foreground">
                                     Security Deposit
                                 </p>
-                                <p className="text-lg font-bold text-gray-900">
+                                <p className="text-lg font-bold text-foreground">
                                     {formatCurrency(equipment.deposit_amount)}
                                 </p>
                             </div>
-                            <div className="rounded-lg border border-gray-200 p-3 text-center">
+                            <div className="rounded-lg border border-border p-3 text-center">
                                 <Clock className="mx-auto mb-1 size-5 text-primary" />
-                                <p className="text-xs text-gray-500">
+                                <p className="text-xs text-muted-foreground">
                                     Min Rental
                                 </p>
-                                <p className="text-lg font-bold text-gray-900">
+                                <p className="text-lg font-bold text-foreground">
                                     {equipment.min_rental_days}{' '}
                                     {equipment.min_rental_days === 1
                                         ? 'day'
@@ -304,15 +304,15 @@ export default function EquipmentShow({
                         </div>
 
                         {/* Availability */}
-                        <div className="mb-6 flex items-center gap-2 rounded-lg border border-gray-200 p-3">
+                        <div className="mb-6 flex items-center gap-2 rounded-lg border border-border p-3">
                             <Info className="size-5 shrink-0 text-primary" />
                             <div className="text-sm">
                                 {isAvailable ? (
-                                    <span className="font-medium text-green-700">
+                                    <span className="font-medium text-green-600 dark:text-green-400">
                                         Available for rent
                                         {equipment.available_quantity !==
                                             undefined && (
-                                            <span className="font-normal text-gray-500">
+                                            <span className="font-normal text-muted-foreground">
                                                 {' '}
                                                 &mdash;{' '}
                                                 {equipment.available_quantity}{' '}
@@ -321,7 +321,7 @@ export default function EquipmentShow({
                                         )}
                                     </span>
                                 ) : (
-                                    <span className="font-medium text-red-600">
+                                    <span className="font-medium text-destructive">
                                         Currently unavailable
                                     </span>
                                 )}
@@ -353,13 +353,13 @@ export default function EquipmentShow({
                 {equipment.specifications &&
                     Object.keys(equipment.specifications).length > 0 && (
                         <div className="mt-12">
-                            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900">
+                            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
                                 <Wrench className="size-5 text-primary" />
                                 Specifications
                             </h2>
                             <Card className="gap-0 py-0 overflow-hidden">
                                 <CardContent className="p-0">
-                                    <div className="divide-y divide-gray-100">
+                                    <div className="divide-y divide-border">
                                         {Object.entries(
                                             equipment.specifications,
                                         ).map(([key, value], index) => (
@@ -367,14 +367,14 @@ export default function EquipmentShow({
                                                 key={key}
                                                 className={`flex items-center justify-between px-4 py-3 text-sm ${
                                                     index % 2 === 0
-                                                        ? 'bg-gray-50/50'
+                                                        ? 'bg-muted/50'
                                                         : ''
                                                 }`}
                                             >
-                                                <span className="font-medium capitalize text-gray-700">
+                                                <span className="font-medium capitalize text-muted-foreground">
                                                     {key.replace(/_/g, ' ')}
                                                 </span>
-                                                <span className="text-gray-600">
+                                                <span className="text-muted-foreground">
                                                     {value}
                                                 </span>
                                             </div>
@@ -388,7 +388,7 @@ export default function EquipmentShow({
                 {/* Features */}
                 {equipment.features && equipment.features.length > 0 && (
                     <div className="mt-10">
-                        <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900">
+                        <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
                             <Check className="size-5 text-primary" />
                             Features
                         </h2>
@@ -399,7 +399,7 @@ export default function EquipmentShow({
                                     className="flex items-start gap-2 rounded-md p-2"
                                 >
                                     <Check className="mt-0.5 size-4 shrink-0 text-primary" />
-                                    <span className="text-sm text-gray-700">
+                                    <span className="text-sm text-muted-foreground">
                                         {feature}
                                     </span>
                                 </div>
@@ -410,13 +410,13 @@ export default function EquipmentShow({
 
                 {/* Related Equipment */}
                 {relatedEquipment.length > 0 && (
-                    <div className="mt-16 border-t border-gray-200 pt-12">
+                    <div className="mt-16 border-t border-border pt-12">
                         <div className="mb-8 flex items-end justify-between">
                             <div>
-                                <h2 className="mb-2 text-2xl font-bold text-gray-900">
+                                <h2 className="mb-2 text-2xl font-bold text-foreground">
                                     Related Equipment
                                 </h2>
-                                <p className="text-gray-600">
+                                <p className="text-muted-foreground">
                                     You might also be interested in these items
                                 </p>
                             </div>

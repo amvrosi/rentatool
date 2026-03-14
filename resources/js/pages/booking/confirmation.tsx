@@ -22,7 +22,7 @@ export default function BookingConfirmation({ rental }: Props) {
             <div className="flex h-full flex-1 items-start justify-center p-4 md:p-6">
                 <Card className="w-full max-w-lg">
                     <CardHeader className="items-center text-center">
-                        <CheckCircle className="h-16 w-16 text-green-500 mb-2" />
+                        <CheckCircle className="h-16 w-16 text-green-500 dark:text-green-400 mb-2" />
                         <CardTitle className="text-2xl">Booking Request Submitted!</CardTitle>
                         <p className="text-muted-foreground text-sm">
                             Your booking request has been received. We will review and confirm it shortly.

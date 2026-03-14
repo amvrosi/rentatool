@@ -122,7 +122,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.name}
                                         onChange={(e) => setData('name', e.target.value)}
                                     />
-                                    {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
+                                    {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="sku">SKU *</Label>
@@ -131,7 +131,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.sku}
                                         onChange={(e) => setData('sku', e.target.value)}
                                     />
-                                    {errors.sku && <p className="text-sm text-red-600">{errors.sku}</p>}
+                                    {errors.sku && <p className="text-sm text-destructive">{errors.sku}</p>}
                                 </div>
                             </div>
 
@@ -151,7 +151,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                             ))}
                                         </SelectContent>
                                     </Select>
-                                    {errors.category_id && <p className="text-sm text-red-600">{errors.category_id}</p>}
+                                    {errors.category_id && <p className="text-sm text-destructive">{errors.category_id}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="status">Status *</Label>
@@ -168,7 +168,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                             <SelectItem value="retired">Retired</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    {errors.status && <p className="text-sm text-red-600">{errors.status}</p>}
+                                    {errors.status && <p className="text-sm text-destructive">{errors.status}</p>}
                                 </div>
                             </div>
 
@@ -179,7 +179,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                     value={data.short_description}
                                     onChange={(e) => setData('short_description', e.target.value)}
                                 />
-                                {errors.short_description && <p className="text-sm text-red-600">{errors.short_description}</p>}
+                                {errors.short_description && <p className="text-sm text-destructive">{errors.short_description}</p>}
                             </div>
 
                             <div className="space-y-2">
@@ -191,7 +191,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                     value={data.description}
                                     onChange={(e) => setData('description', e.target.value)}
                                 />
-                                {errors.description && <p className="text-sm text-red-600">{errors.description}</p>}
+                                {errors.description && <p className="text-sm text-destructive">{errors.description}</p>}
                             </div>
                         </CardContent>
                     </Card>
@@ -213,7 +213,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.daily_rate}
                                         onChange={(e) => setData('daily_rate', e.target.value)}
                                     />
-                                    {errors.daily_rate && <p className="text-sm text-red-600">{errors.daily_rate}</p>}
+                                    {errors.daily_rate && <p className="text-sm text-destructive">{errors.daily_rate}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="weekly_rate">Weekly Rate ($)</Label>
@@ -225,7 +225,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.weekly_rate}
                                         onChange={(e) => setData('weekly_rate', e.target.value)}
                                     />
-                                    {errors.weekly_rate && <p className="text-sm text-red-600">{errors.weekly_rate}</p>}
+                                    {errors.weekly_rate && <p className="text-sm text-destructive">{errors.weekly_rate}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="monthly_rate">Monthly Rate ($)</Label>
@@ -237,7 +237,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.monthly_rate}
                                         onChange={(e) => setData('monthly_rate', e.target.value)}
                                     />
-                                    {errors.monthly_rate && <p className="text-sm text-red-600">{errors.monthly_rate}</p>}
+                                    {errors.monthly_rate && <p className="text-sm text-destructive">{errors.monthly_rate}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="deposit_amount">Deposit Amount ($) *</Label>
@@ -249,7 +249,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.deposit_amount}
                                         onChange={(e) => setData('deposit_amount', e.target.value)}
                                     />
-                                    {errors.deposit_amount && <p className="text-sm text-red-600">{errors.deposit_amount}</p>}
+                                    {errors.deposit_amount && <p className="text-sm text-destructive">{errors.deposit_amount}</p>}
                                 </div>
                             </div>
                         </CardContent>
@@ -271,7 +271,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.quantity}
                                         onChange={(e) => setData('quantity', e.target.value)}
                                     />
-                                    {errors.quantity && <p className="text-sm text-red-600">{errors.quantity}</p>}
+                                    {errors.quantity && <p className="text-sm text-destructive">{errors.quantity}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="min_rental_days">Min Rental Days</Label>
@@ -282,7 +282,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.min_rental_days}
                                         onChange={(e) => setData('min_rental_days', e.target.value)}
                                     />
-                                    {errors.min_rental_days && <p className="text-sm text-red-600">{errors.min_rental_days}</p>}
+                                    {errors.min_rental_days && <p className="text-sm text-destructive">{errors.min_rental_days}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="max_rental_days">Max Rental Days</Label>
@@ -293,7 +293,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                         value={data.max_rental_days}
                                         onChange={(e) => setData('max_rental_days', e.target.value)}
                                     />
-                                    {errors.max_rental_days && <p className="text-sm text-red-600">{errors.max_rental_days}</p>}
+                                    {errors.max_rental_days && <p className="text-sm text-destructive">{errors.max_rental_days}</p>}
                                 </div>
                             </div>
 
@@ -357,7 +357,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                     )}
                                 </div>
                             ))}
-                            {errors.specifications && <p className="text-sm text-red-600">{errors.specifications}</p>}
+                            {errors.specifications && <p className="text-sm text-destructive">{errors.specifications}</p>}
                         </CardContent>
                     </Card>
 
@@ -393,7 +393,7 @@ export default function EquipmentCreate({ categories }: Props) {
                                     )}
                                 </div>
                             ))}
-                            {errors.features && <p className="text-sm text-red-600">{errors.features}</p>}
+                            {errors.features && <p className="text-sm text-destructive">{errors.features}</p>}
                         </CardContent>
                     </Card>
 
