@@ -1,7 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
 import {
     CheckCircle,
-    Clock,
     DollarSign,
     Headphones,
     HardHat,
