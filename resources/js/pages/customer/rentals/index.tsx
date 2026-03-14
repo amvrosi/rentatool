@@ -108,10 +108,10 @@ export default function CustomerRentalsIndex({ rentals }: Props) {
                         </div>
 
                         {/* Pagination */}
-                        {rentals.meta.last_page > 1 && (
+                        {rentals.meta?.last_page > 1 && (
                             <div className="flex items-center justify-between border-t px-4 py-3">
                                 <p className="text-sm text-muted-foreground">
-                                    Showing {rentals.meta.from} to {rentals.meta.to} of {rentals.meta.total} rentals
+                                    Showing {rentals.meta?.from} to {rentals.meta?.to} of {rentals.meta?.total} rentals
                                 </p>
                                 <div className="flex gap-2">
                                     {rentals.links.prev && (

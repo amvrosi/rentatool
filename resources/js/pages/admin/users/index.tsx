@@ -34,7 +34,7 @@ interface Props {
     };
 }
 
-export default function AdminUsersIndex({ users, filters }: Props) {
+export default function AdminUsersIndex({ users, filters = {} }: Props) {
     const [search, setSearch] = useState(filters.search ?? '');
 
     function handleFilter(params: Record<string, string | undefined>) {
@@ -54,7 +54,7 @@ export default function AdminUsersIndex({ users, filters }: Props) {
                     <h1 className="text-2xl font-bold">Users</h1>
                     <div className="flex items-center gap-2">
                         <UsersIcon className="h-5 w-5 text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{users.meta.total} total users</span>
+                        <span className="text-sm text-muted-foreground">{users.meta?.total} total users</span>
                     </div>
                 </div>
 
@@ -163,10 +163,10 @@ export default function AdminUsersIndex({ users, filters }: Props) {
                         </div>
 
                         {/* Pagination */}
-                        {users.meta.last_page > 1 && (
+                        {users.meta?.last_page > 1 && (
                             <div className="flex items-center justify-between border-t px-4 py-3">
                                 <p className="text-sm text-muted-foreground">
-                                    Showing {users.meta.from} to {users.meta.to} of {users.meta.total}
+                                    Showing {users.meta?.from} to {users.meta?.to} of {users.meta?.total}
                                 </p>
                                 <div className="flex gap-2">
                                     {users.links.prev && (

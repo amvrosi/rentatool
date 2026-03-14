@@ -8,20 +8,43 @@ use App\Http\Requests\Admin\UpdateEquipmentRequest;
 use App\Models\Equipment;
 use App\Models\EquipmentCategory;
 use App\Models\EquipmentImage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class EquipmentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $equipment = Equipment::with(['category', 'primaryImage'])
-            ->orderBy('created_at', 'desc')
-            ->paginate(15);
+        $query = Equipment::with(['category', 'primaryImage']);
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('sku', 'like', "%{$search}%");
+            });
+        }
+
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        $equipment = $query->orderBy('created_at', 'desc')
+            ->paginate(15)
+            ->withQueryString();
+
+        $categories = EquipmentCategory::active()->orderBy('sort_order')->get();
 
         return Inertia::render('admin/equipment/index', [
             'equipment' => $equipment,
+            'categories' => $categories,
+            'filters' => $request->only(['search', 'category', 'status']),
         ]);
     }
 

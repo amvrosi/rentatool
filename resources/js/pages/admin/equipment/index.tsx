@@ -31,7 +31,7 @@ interface Props {
     };
 }
 
-export default function EquipmentIndex({ equipment, categories, filters }: Props) {
+export default function EquipmentIndex({ equipment, categories = [], filters = {} }: Props) {
     const [search, setSearch] = useState(filters.search ?? '');
 
     function applyFilters(newFilters: Record<string, string>) {
@@ -221,10 +221,10 @@ export default function EquipmentIndex({ equipment, categories, filters }: Props
                         </div>
 
                         {/* Pagination */}
-                        {equipment.meta.last_page > 1 && (
+                        {equipment.meta?.last_page > 1 && (
                             <div className="flex items-center justify-between border-t px-4 py-3">
                                 <p className="text-sm text-muted-foreground">
-                                    Showing {equipment.meta.from} to {equipment.meta.to} of {equipment.meta.total} items
+                                    Showing {equipment.meta?.from} to {equipment.meta?.to} of {equipment.meta?.total} items
                                 </p>
                                 <div className="flex gap-2">
                                     {equipment.links.prev && (

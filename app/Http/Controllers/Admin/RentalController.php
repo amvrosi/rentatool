@@ -23,11 +23,20 @@ class RentalController extends Controller
             $query->where('status', $request->status);
         }
 
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('rental_number', 'like', "%{$search}%")
+                  ->orWhereHas('customer', fn ($q) => $q->where('name', 'like', "%{$search}%"))
+                  ->orWhereHas('equipment', fn ($q) => $q->where('name', 'like', "%{$search}%"));
+            });
+        }
+
         $rentals = $query->orderBy('created_at', 'desc')->paginate(15)->withQueryString();
 
         return Inertia::render('admin/rentals/index', [
             'rentals' => $rentals,
-            'filters' => $request->only(['status']),
+            'filters' => $request->only(['status', 'search']),
             'statuses' => array_map(fn ($s) => ['value' => $s->value, 'label' => $s->label()], RentalStatus::cases()),
         ]);
     }

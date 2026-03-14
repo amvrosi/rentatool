@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/equipment', [EquipmentController::class, 'index'])->name('equipment.index');
 Route::get('/equipment/{slug}', [EquipmentController::class, 'show'])->name('equipment.show');
+Route::get('/about', fn () => \Inertia\Inertia::render('about'))->name('about');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', DashboardRedirectController::class)->name('dashboard');

@@ -369,8 +369,8 @@ export default function EquipmentIndex({
                                         )}
 
                                         <span className="px-4 text-sm text-muted-foreground">
-                                            Page {equipment.meta.current_page}{' '}
-                                            of {equipment.meta.last_page}
+                                            Page {equipment.meta?.current_page}{' '}
+                                            of {equipment.meta?.last_page}
                                         </span>
 
                                         {equipment.links.next ? (
